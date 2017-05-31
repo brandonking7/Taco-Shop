@@ -14,4 +14,22 @@
 //= require jquery_ujs
 //= require angular/angular
 //= require angular-ui-router/release/angular-ui-router
+//= require_self
 //= require_tree .
+
+angular
+  .module('app', ['ui.router'])
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    $stateProvider
+      .state('tacos', {
+        url: '/tacos',
+        component: 'tacos'
+      });
+
+    $urlRouterProvider.otherwise('/');
+
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
+  });
