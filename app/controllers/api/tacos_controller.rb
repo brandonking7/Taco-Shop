@@ -1,16 +1,14 @@
 class Api::TacosController < ApplicationController
-
+  # GET /api/tacos
   def index
     @tacos = Taco.all
 
-    # render json: @tacos
-    respond_to do |format|
+    render json: @tacos
+    # respond_to do |format|
 
-    format.html # show.html.erb
-    format.json { render json: @tacos }
+    # format.html # show.html.erb
+    # format.json { render json: @tacos }
 
-
-    end
   end
 
   def create
