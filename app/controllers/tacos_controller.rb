@@ -1,5 +1,18 @@
 class TacosController < ApplicationController
-  # layout false
+
   def index
+    @tacos = Taco.all
+  end
+
+  def new
+
+  end
+
+  def create
+
+  end
+
+  def destroy
+
   end
 end
