@@ -1,9 +1,3 @@
-<h1>Tacos#index</h1>
-<p>Find me in app/views/tacos/index.html.erb</p>
-This is the Tacos Controller!!
-
-
-
 <html ng-app="app">
 <head>
   <title>LD Studios Rails Interview</title>
@@ -107,10 +101,10 @@ This is the Tacos Controller!!
     this.getTacos = function() {
       return $http.get('/tacos').then(function(result) {
         return _.map(result.data, fromJSON);
+        console.log(result.data)
       });
     };
     this.createTaco = function(json) {
-      console.log(json)
       return $http({
         method: 'POST',
         url: '/tacos',

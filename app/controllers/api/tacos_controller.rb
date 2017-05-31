@@ -3,7 +3,14 @@ class TacosController < ApplicationController
   def index
     @tacos = Taco.all
 
-    render json: @tacos
+    # render json: @tacos
+    respond_to do |format|
+
+    format.html # show.html.erb
+    format.json { render json: @tacos }
+
+
+    end
   end
 
   def create
@@ -14,7 +21,7 @@ class TacosController < ApplicationController
         format.html { redirect_to @taco, notice: "Taco was successfully created." }
         format.json { render json: @taco, status: :created }
       else
-        format.json { render json: @taco.errors, status: :unprocessable_entity }
+        format.json { render json: @taco.errors, notice: "Something wenj2fh2 fu4fTaco was successfully created." }
       end
       end
   end
@@ -33,6 +40,6 @@ class TacosController < ApplicationController
 
   def taco_params
     params.require(:taco)
-          .permit(:meat, :rice, :salsa, :notes)
+          .permit(:meat)
   end
 end
