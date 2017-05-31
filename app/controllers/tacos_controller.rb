@@ -1,4 +1,4 @@
-class Api::TacosController < ApplicationController
+class TacosController < ApplicationController
 
   def index
     @tacos = Taco.all
