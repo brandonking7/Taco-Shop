@@ -8,12 +8,25 @@ angular
 
     var service = {};
     service.getTacos = getTacos;
+    service.createTaco = createTaco;
+    service.deleteTaco = deleteTaco;
 
     return service;
 
-    console.log('hey do you shwuhw2hd2hd2');
     function getTacos() {
       console.log('Hey From Tacos!');
       return $http.get('/api/tacos');
+    }
+
+    function createTaco(taco) {
+      console.log('Trying to create tacos!')
+      return $http.post('/api/tacos/', taco);
+      console.log('Taco created!')
+    }
+
+    function deleteTaco(id) {
+      console.log('Trying to delete a taco!')
+      return $http.delete('/api/tacos/' + id);
+      console.log('deleted a taco!')
     }
   }

@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'angular_rails_csrf'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'pry'
 gem 'awesome_print'
 
 

@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531190350) do
+ActiveRecord::Schema.define(version: 20170601040838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "tacos", force: :cascade do |t|
     t.string   "meat"
-    t.string   "rice"
-    t.string   "salsa"
     t.string   "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "rice",       default: false
+    t.boolean  "salsa",      default: false
   end
 
 end
