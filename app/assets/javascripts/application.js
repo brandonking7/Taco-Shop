@@ -26,7 +26,7 @@ angular
         component: 'tacos'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/tacos');
 
     $locationProvider.html5Mode({
       enabled: true,
