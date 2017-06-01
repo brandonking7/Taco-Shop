@@ -5,21 +5,10 @@ angular
 TacosController.$inject = ['TacoService'];
 
 function TacosController(TacoService) {
-  // var vm = this;
+
   var tc = this;
 
   tc.tacos = [];
-  // tc.tacoDelete = tacoDelete;
-
-
-  // activate();
-  // //
-  // function activate() {
-  //   TacoService.getTacos().then(function(response) {
-  //     tc.tacos = response.data;
-  //     console.log(response);
-  //   });
-  // }
 
   // Load the list of tacos we already have
   TacoService.getTacos().then(function(tacos) {
@@ -28,6 +17,7 @@ function TacosController(TacoService) {
   }).catch(function(err) {
     tc.listError = err.message || err.statusText;
   });
+
   // // Create a default taco for new tacos
   var defaultTaco = {
     meat: 'chicken',
@@ -48,13 +38,7 @@ function TacosController(TacoService) {
       tc.creatingTaco = false;
     })
   };
-  // function tacoDelete(taco_id) {
-  //   console.log('TacosController' + taco_id)
-  //   TacoService.deleteTaco(taco_id)
-  //   .then(function(response) {
-  //
-  //   });
-  // }
+
   tc.deleteTaco = function(taco) {
     tc.deleteError = null;
     TacoService.deleteTaco(taco.id).then(function() {

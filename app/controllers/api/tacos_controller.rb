@@ -21,7 +21,7 @@ class Api::TacosController < ApplicationController
     @taco = Taco.find(params[:id])
 
     @taco.destroy
-    binding.pry
+    
     render json: '', status: :no_content
   end
 

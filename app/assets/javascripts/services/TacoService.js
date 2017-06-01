@@ -19,14 +19,13 @@ angular
     }
 
     function createTaco(taco) {
-      console.log('Trying to create tacos!')
-      return $http.post('/api/tacos/', taco);
       console.log('Taco created!')
+      return $http.post('/api/tacos/', taco);
     }
 
     function deleteTaco(id) {
-      console.log('Trying to delete a taco!')
       return $http.delete('/api/tacos/' + id);
       console.log('deleted a taco!')
     }
+
   }
