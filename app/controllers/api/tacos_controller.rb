@@ -1,4 +1,5 @@
 class Api::TacosController < ApplicationController
+
   # GET /api/tacos
   def index
     @tacos = Taco.all
@@ -21,7 +22,7 @@ class Api::TacosController < ApplicationController
     @taco = Taco.find(params[:id])
 
     @taco.destroy
-    
+
     render json: '', status: :no_content
   end
 
